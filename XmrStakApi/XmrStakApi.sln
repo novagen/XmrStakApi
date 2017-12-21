@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmrStakApi", "XmrStakApi\XmrStakApi.csproj", "{2988EF63-8B72-4EBC-B8B4-27076CE4C5EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2988EF63-8B72-4EBC-B8B4-27076CE4C5EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2988EF63-8B72-4EBC-B8B4-27076CE4C5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2988EF63-8B72-4EBC-B8B4-27076CE4C5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2988EF63-8B72-4EBC-B8B4-27076CE4C5EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EDABBE9-98FD-499D-B97D-CAFA57733A0C}
+	EndGlobalSection
+EndGlobal
