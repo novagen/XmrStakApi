@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+	<id>Apparent.XmrStak.Api</id>
+	<version>1.0.0</version>
+	<title>Apparent XmrStak API</title>
+	<authors>Novagen</authors>
+	<owners>Novagen</owners>
+	<requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<description>Access the API of xmr-stak miner</description>
+	<tags>xmr-stak api</tags>
+	<projectUrl>https://github.com/Novagen/XmrStakApi</projectUrl>
+  </metadata>
+</package>
