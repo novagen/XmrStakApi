@@ -54,4 +54,7 @@
     <None Include="XmrStakApi.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /HIDE "$(SolutionDir)\packages\*.*" "$(MSBuildProjectDirectory)\packages"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
