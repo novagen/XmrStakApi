@@ -5,7 +5,13 @@ namespace XmrStakApi
 {
     public class XmrStak
     {
-		public static Miner GetData(Miner miner)
+		public WebProxy Proxy { get; set; }
+
+		public XmrStak()
+		{
+		}
+
+		public Miner GetData(Miner miner)
 		{
 			miner.Error = null;
 
@@ -16,10 +22,10 @@ namespace XmrStakApi
 
 			using (var client = new WebClient())
 			{
-				if (miner.Proxy != null)
+				if (Proxy != null)
 				{
-					WebRequest.DefaultWebProxy = miner.Proxy;
-					client.Proxy = miner.Proxy;
+					WebRequest.DefaultWebProxy = Proxy;
+					client.Proxy = Proxy;
 				}
 
 				if (miner.Credentials != null)

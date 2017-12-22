@@ -14,35 +14,16 @@ namespace XmrStakApi
 
 		public string Response { private get; set; }
 		public WebError Error { get; set; }
-		public WebProxy Proxy { get; set; }
 
 		public Miner() { }
 
-		public Miner(string name, string url, int port, string username, string password, WebProxy proxy = null)
+		public Miner(string name, string url, int port, string username, string password)
 		{
 			Name = name;
 			Url = url;
 			Port = port;
 			Username = username;
 			Password = password;
-			Proxy = proxy;
-		}
-
-		public Miner(string name, string url, int port, string username, string password, string proxyUrl, string proxyUsername, string proxyPassword)
-		{
-			Name = name;
-			Url = url;
-			Port = port;
-			Username = username;
-			Password = password;
-
-			if (!string.IsNullOrWhiteSpace(proxyUrl))
-			{
-				Proxy = new WebProxy(proxyUrl, true)
-				{
-					Credentials = new NetworkCredential(proxyUsername, proxyPassword)
-				};
-			}
 		}
 
 		public Data Data
@@ -85,14 +66,6 @@ namespace XmrStakApi
 
 				return null;
 			}
-		}
-
-		public void SetProxy(string url, string username, string password)
-		{
-			Proxy = !string.IsNullOrWhiteSpace(url) ? new WebProxy(url, true)
-			{
-				Credentials = new NetworkCredential(username, password)
-			} : null;
 		}
 
 		public override string ToString()
