@@ -11,6 +11,11 @@ namespace XmrStakApi
 		{
 		}
 
+		public XmrStak(WebProxy proxy)
+		{
+			Proxy = proxy;
+		}
+
 		public Miner GetData(Miner miner)
 		{
 			miner.Error = null;
