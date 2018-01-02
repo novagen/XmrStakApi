@@ -20,10 +20,10 @@ namespace XmrStakApi
 	public class Hashrate
 	{
 		[JsonProperty("threads")]
-		public float[][] Threads { get; set; }
+		public float?[][] Threads { get; set; }
 
 		[JsonProperty("total")]
-		public float[] Total { get; set; }
+		public float?[] Total { get; set; }
 
 		[JsonProperty("highest")]
 		public float Highest { get; set; }
