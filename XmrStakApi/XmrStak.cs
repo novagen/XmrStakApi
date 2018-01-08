@@ -1,32 +1,49 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Net;
 
 namespace XmrStakApi
 {
     public class XmrStak
     {
-		public WebProxy Proxy { get; set; }
+		private const int _defaultTimeOut = 30;
+
+		private WebProxy Proxy { get; set; }
+		private int TimeOut { get; set; }
 
 		public XmrStak()
 		{
 		}
 
-		public XmrStak(WebProxy proxy)
+		public XmrStak(int timeOut = _defaultTimeOut)
+		{
+			TimeOut = timeOut;
+		}
+
+		public XmrStak(WebProxy proxy, int timeOut = _defaultTimeOut)
+		{
+			Proxy = proxy;
+			TimeOut = timeOut;
+		}
+
+		public void SetProxy(WebProxy proxy)
 		{
 			Proxy = proxy;
 		}
 
-		public Miner GetData(Miner miner)
+		public void SetTimeOut(int timeOut)
 		{
-			miner.Error = null;
+			TimeOut = timeOut;
+		}
 
-			if (!miner.Url.StartsWith("http"))
-			{
-				miner.Url = $"http://{miner.Url}";
-			}
+		public MinerResponse GetData(Miner miner)
+		{
+			var result = new MinerResponse();
 
-			using (var client = new WebClient())
+			using (var client = new ExtendedWebClient())
 			{
+				client.TimeOut = TimeOut;
+
 				if (Proxy != null)
 				{
 					WebRequest.DefaultWebProxy = Proxy;
@@ -43,21 +60,27 @@ namespace XmrStakApi
 					}
 					catch (Exception e)
 					{
-						miner.Error = new WebError(DateTime.Now, e.Message);
+						result.Error = new WebError(DateTime.Now, e.Message);
 					}
 				}
 
 				try
 				{
-					miner.Response = client.DownloadString(miner.Uri);
+					var response = client.DownloadString(miner.Uri);
+
+					if (response != null)
+					{
+						result.Data = JsonConvert.DeserializeObject<Data>(response);
+						result.Status = true;
+					}
 				}
 				catch (Exception e)
 				{
-					miner.Error = new WebError(DateTime.Now, e.Message);
+					result.Error = new WebError(DateTime.Now, e.Message);
 				}
 			}
 
-			return miner;
+			return result;
 		}
     }
 }

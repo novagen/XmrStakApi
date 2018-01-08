@@ -44,7 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="ExtendedWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Miner.cs" />
+    <Compile Include="MinerResponse.cs" />
     <Compile Include="WebError.cs" />
     <Compile Include="XmrStak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

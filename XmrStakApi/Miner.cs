@@ -6,14 +6,14 @@ namespace XmrStakApi
 {
 	public class Miner
 	{
+		public string Id { get; set; }
 		public string Name { get; set; }
 		public string Url { get; set; }
 		public int Port { get; set; }
 		public string Username { get; set; }
 		public string Password { get; set; }
 
-		public string Response { private get; set; }
-		public WebError Error { get; set; }
+		public MinerResponse Data { get; set; }
 
 		public Miner() { }
 
@@ -26,24 +26,18 @@ namespace XmrStakApi
 			Password = password;
 		}
 
-		public Data Data
-		{
-			get
-			{
-				if (!string.IsNullOrWhiteSpace(Response))
-				{
-					return JsonConvert.DeserializeObject<Data>(Response);
-				}
-
-				return null;
-			}
-		}
-
 		public Uri Uri
 		{
 			get
 			{
-				return new Uri($"{Url}:{Port}/api.json");
+				var result = $"{Url}:{Port}/api.json";
+
+				if (!result.StartsWith("http"))
+				{
+					result = $"http://{result}";
+				}
+
+				return new Uri(result);
 			}
 		}
 
