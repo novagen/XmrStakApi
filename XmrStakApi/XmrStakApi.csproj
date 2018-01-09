@@ -43,12 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
     <Compile Include="Data.cs" />
+    <Compile Include="ErrorLog.cs" />
     <Compile Include="ExtendedWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Hashrate.cs" />
     <Compile Include="Miner.cs" />
     <Compile Include="MinerResponse.cs" />
+    <Compile Include="Notifiable.cs" />
+    <Compile Include="Results.cs" />
     <Compile Include="WebError.cs" />
     <Compile Include="XmrStak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
