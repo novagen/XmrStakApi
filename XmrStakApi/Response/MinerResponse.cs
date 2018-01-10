@@ -1,4 +1,5 @@
 ﻿using XmrStakApi.Data;
+using XmrStakApi.Extensions;
 
 namespace XmrStakApi.Response
 {

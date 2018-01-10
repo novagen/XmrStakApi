@@ -2,6 +2,7 @@
 using System;
 using System.Net;
 using XmrStakApi.Response;
+using XmrStakApi.Extensions;
 
 namespace XmrStakApi
 {

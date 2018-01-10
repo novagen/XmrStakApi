@@ -44,7 +44,7 @@ namespace XmrStakApi
 
 			using (var client = new ExtendedWebClient())
 			{
-				client.TimeOut = TimeOut;
+				client.Timeout = TimeOut;
 
 				if (Proxy != null)
 				{
