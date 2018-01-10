@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace XmrStakApi
+namespace XmrStakApi.Data
 {
 	public class Connection : Notifiable
 	{

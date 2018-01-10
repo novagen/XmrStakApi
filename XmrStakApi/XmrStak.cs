@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Net;
+using XmrStakApi.Data;
+using XmrStakApi.Response;
 
 namespace XmrStakApi
 {
@@ -70,7 +72,7 @@ namespace XmrStakApi
 
 					if (response != null)
 					{
-						result.Data = JsonConvert.DeserializeObject<Data>(response);
+						result.Data = JsonConvert.DeserializeObject<MinerData>(response);
 						result.Status = true;
 					}
 				}

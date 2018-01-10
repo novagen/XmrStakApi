@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace XmrStakApi
+namespace XmrStakApi.Data
 {
 	public class ErrorLog : Notifiable
 	{

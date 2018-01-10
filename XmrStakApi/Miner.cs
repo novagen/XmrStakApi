@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Net;
+using XmrStakApi.Response;
 
 namespace XmrStakApi
 {

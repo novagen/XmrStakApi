@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XmrStakApi
+namespace XmrStakApi.Data
 {
 	public class WebError : Notifiable
 	{

@@ -1,10 +1,12 @@
-﻿namespace XmrStakApi
+﻿using XmrStakApi.Data;
+
+namespace XmrStakApi.Response
 {
 	public class MinerResponse : Notifiable
 	{
 		private WebError _error { get; set; }
 		private bool _status { get; set; }
-		private Data _data { get; set; }
+		private MinerData _data { get; set; }
 
 		public WebError Error
 		{
@@ -38,7 +40,7 @@
 			}
 		}
 
-		public Data Data
+		public MinerData Data
 		{
 			get
 			{

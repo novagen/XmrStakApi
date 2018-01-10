@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace XmrStakApi
+namespace XmrStakApi.Data
 {
-	public class Data : Notifiable
+	public class MinerData : Notifiable
 	{
 		private string _version { get; set; }
 		private Hashrate _hashrate { get; set; }

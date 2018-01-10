@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A6B046B4-AB16-4216-AF73-794874F44BC0}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -43,24 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
-    <Compile Include="Data.cs" />
-    <Compile Include="ErrorLog.cs" />
+    <Compile Include="Data\Connection.cs" />
+    <Compile Include="Data\MinerData.cs" />
+    <Compile Include="Data\ErrorLog.cs" />
     <Compile Include="ExtendedWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Hashrate.cs" />
+    <Compile Include="Data\Hashrate.cs" />
     <Compile Include="Miner.cs" />
-    <Compile Include="MinerResponse.cs" />
+    <Compile Include="Response\MinerResponse.cs" />
     <Compile Include="Notifiable.cs" />
-    <Compile Include="Results.cs" />
-    <Compile Include="WebError.cs" />
+    <Compile Include="Data\Results.cs" />
+    <Compile Include="Data\WebError.cs" />
     <Compile Include="XmrStak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="XmrStakApi.nuspec" />
+    <None Include="XmrStakApi.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
